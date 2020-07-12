@@ -1,5 +1,5 @@
 const introContainer = [...document.querySelectorAll('.intro-container')];
-const dots = [...document.querySelectorAll('.intro-links')];
+const dots = [...document.querySelectorAll('.intro-dot')];
 const burgerButton = document.querySelector('.burger');
 const navbarUL = document.querySelector('.navbar-ul');
 
@@ -14,9 +14,10 @@ if (document.readyState == 'loading') {
 function ready() {
     showSlides(slideIndex);
     burgerActive();
-    setInterval(() => {
-        showSlides(++slideIndex);
-    }, 5000);
+    resizeScreen();
+    // setInterval(() => {
+    //     showSlides(++slideIndex);
+    // }, 5000);
 }
 
 function plusSlides(n) {
@@ -46,3 +47,10 @@ function burgerActive() {
     })
 }
 
+function resizeScreen() {
+    window.addEventListener("resize", function (event) {
+        if (document.body.clientWidth) {
+            navbarUL.classList.remove('burger-active');
+        }
+    })
+}
