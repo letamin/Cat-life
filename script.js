@@ -22,9 +22,9 @@ function ready() {
     displayInfoContainer()
     closeInfoContainer();
     resizeScreen();
-    setInterval(() => {
-        showSlides(++slideIndex);
-    }, 5000);
+    // setInterval(() => {
+    //     showSlides(++slideIndex);
+    // }, 5000);
 }
 
 function plusSlides(n) {
