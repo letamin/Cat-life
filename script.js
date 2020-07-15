@@ -7,8 +7,12 @@ const moreInfoContainer = document.querySelector('.more-info-overlay');
 const moreInfoInsideContainer = document.querySelector('.more-info-container');
 const btnClose = document.querySelector('.btn-close');
 const btnMoreInfo = document.querySelector('.btn-more');
+const owlPages = [...document.querySelectorAll('.owl-page')];
+const owlRowOne = document.querySelector('.owl-row-one');
+const owlRowTwo = document.querySelector('.owl-row-two');
 
 var slideIndex = 1;
+var owlIndex = 1;
 
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
@@ -22,9 +26,14 @@ function ready() {
     displayInfoContainer()
     closeInfoContainer();
     resizeScreen();
-    // setInterval(() => {
-    //     showSlides(++slideIndex);
-    // }, 5000);
+    // autoShowSlides();
+    showOwlSlides();
+}
+
+function autoShowSlides() {
+    setInterval(() => {
+        showSlides(++slideIndex);
+    }, 5000);
 }
 
 function plusSlides(n) {
@@ -33,6 +42,11 @@ function plusSlides(n) {
 
 function currentSlide(n) {
     showSlides(slideIndex = n);
+}
+
+function owlSlide(n) {
+    owlIndex = n;
+    showOwlSlides();
 }
 
 function showSlides(n) {
@@ -48,6 +62,23 @@ function showSlides(n) {
     dots[slideIndex - 1].classList.add('here');
 }
 
+function showOwlSlides() {
+    for (let i = 0; i < owlPages.length; i++) {
+        owlPages[i].classList.remove('owl-active');
+    }
+
+    owlPages[owlIndex - 1].classList.add('owl-active');
+
+    const owlActive = document.querySelector('.owl-active');
+    if (owlActive.classList.contains('owl-control-two')) {
+        owlRowOne.className = 'owl-row owl-row-one right-to-left';
+        owlRowTwo.className = 'owl-row owl-row-two right-to-left';
+    } else if (owlActive.classList.contains('owl-control-one')) {
+        owlRowOne.className = 'owl-row owl-row-one left-to-right';
+        owlRowTwo.className = 'owl-row owl-row-two left-to-right';
+    }
+}
+
 function burgerActive() {
     burgerButton.addEventListener('click', () => {
         navbarUL.classList.toggle('burger-active');
@@ -57,13 +88,13 @@ function burgerActive() {
 function displayInfoContainer() {
     btnMoreInfo.addEventListener('click', () => {
         moreInfoContainer.classList.add('display');
-        moreInfoInsideContainer.classList.remove('cac');
+        moreInfoInsideContainer.classList.remove('close');
     })
 }
 
 function closeInfoContainer() {
     btnClose.addEventListener('click', () => {
-        moreInfoInsideContainer.classList.add('cac');
+        moreInfoInsideContainer.classList.add('close');
         setTimeout(() => {
             moreInfoContainer.classList.remove('display');
         }, 500);
@@ -71,7 +102,7 @@ function closeInfoContainer() {
 }
 
 function resizeScreen() {
-    window.addEventListener("resize", function (event) {
+    window.addEventListener("resize", () => {
         if (document.body.clientWidth) {
             navbarUL.classList.remove('burger-active');
         }

@@ -8,7 +8,6 @@
 
 @font-face {
   font-family: "Glyphicons Halflings";
-
   src: url("../fonts/glyphicons-halflings-regular.eot");
   src: url("../fonts/glyphicons-halflings-regular.eot?#iefix")
       format("embedded-opentype"),
@@ -43,6 +42,7 @@ body {
   display: none;
   opacity: 0;
   position: relative;
+  animation: fadeAppear 3s ease;
 }
 
 .visible {
@@ -51,8 +51,9 @@ body {
 }
 
 .container {
-  width: 75.412%;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .logo {
@@ -76,8 +77,14 @@ body {
   display: block;
 }
 
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
 .intro-container-text {
-  padding-top: 18em;
+  padding-top: 22em;
 }
 
 .intro-text-title,
@@ -133,7 +140,7 @@ body {
 }
 
 .intro-arrow {
-  bottom: 50.5%;
+  bottom: 46%;
   width: 50px;
   height: 50px;
   position: absolute;
@@ -146,7 +153,7 @@ body {
 }
 
 .right-arrow {
-  left: 94%;
+  left: 95%;
   background-position: right top;
 }
 
@@ -177,7 +184,7 @@ body {
   background: #ff3535;
 }
 
-/*  Navbar  */
+/************  Navbar  *************/
 .burger {
   display: none;
   cursor: pointer;
@@ -226,6 +233,7 @@ body {
   transition: color 0.5s ease-in;
 }
 
+/************  About section  *************/
 .title-welcome {
   font-family: "Lato", sans-serif;
   color: #000;
@@ -253,11 +261,6 @@ body {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-}
-
-.about-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .about-text-intro h5 {
@@ -344,6 +347,7 @@ body {
   background-color: #000;
 }
 
+/************  More information page  *************/
 .more-info-overlay {
   position: fixed;
   z-index: 500;
@@ -398,12 +402,6 @@ body {
   letter-spacing: 1px;
 }
 
-.more-info-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 .text-color-blue {
   color: #00cdc1;
 }
@@ -437,9 +435,74 @@ body {
   display: block;
 }
 
-.cac {
-  animation: haha 0.5s ease forwards;
+.close {
+  animation: close 0.5s ease forwards;
 }
+
+/************  Slider  *************/
+.owl-item {
+  width: 382px;
+  display: block;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+}
+
+.owl-row {
+  display: flex;
+}
+
+.owl-control {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.owl-page {
+  margin: 0 auto;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 5px 7px;
+  border-radius: 20px;
+  background: #111;
+  cursor: pointer;
+}
+
+.owl-carousel-slider {
+  padding-bottom: 4em;
+}
+
+.owl-active {
+  background: #ff3535;
+}
+
+.right-to-left {
+  transform: translateX(-100%);
+  transition: transform 1s ease;
+}
+
+.left-to-right {
+  transform: translateX(0%);
+  transition: transform 1s ease;
+}
+
+.owl-control-three,
+.owl-control-four,
+.owl-control-five,
+.owl-control-six {
+  display: none;
+}
+
+.owl-item img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/************  Animations  *************/
 
 @keyframes display {
   from {
@@ -452,7 +515,7 @@ body {
   }
 }
 
-@keyframes haha {
+@keyframes close {
   from {
     opacity: 1;
     transform: translateY(0);
@@ -463,18 +526,24 @@ body {
   }
 }
 
-/*--------- Responsive ----------*/
-@media (max-width: 1366px) {
-  .container {
-    width: 84%;
+@keyframes fadeAppear {
+  from {
+    opacity: 0;
   }
 
+  to {
+    opacity: 1;
+  }
+}
+
+/*--------- Responsive ----------*/
+@media (max-width: 1366px) {
   .intro-container {
     min-height: 700px;
   }
 
   .intro-container-text {
-    padding-top: 17.5em;
+    padding-top: 18em;
   }
 
   .logo {
@@ -498,17 +567,13 @@ body {
 }
 
 @media (max-width: 1280px) {
-  .container {
-    width: 90%;
-  }
-
   .intro-container {
     min-height: 670px;
   }
 
   .logo {
     font-size: 40px;
-    padding: 30px 40px 40px;
+    padding: 26px 30px;
   }
 
   .logo-img {
@@ -522,7 +587,6 @@ body {
 
   .intro-text-title {
     font-size: 52px;
-    padding-right: 0.1em;
   }
 
   .intro-text {
@@ -535,16 +599,16 @@ body {
     left: 69.5%;
   }
 
-  .intro-arrow {
-    bottom: 44.2%;
-  }
-
   .left-arrow {
     left: 22px;
   }
 
   .right-arrow {
-    left: 94.5%;
+    left: 95%;
+  }
+
+  .intro-arrow {
+    bottom: 44%;
   }
 
   .intro-ul {
@@ -560,6 +624,10 @@ body {
 }
 
 @media (max-width: 1080px) {
+  .intro-container {
+    min-height: 600px;
+  }
+
   .navbar-ul li {
     font-size: 15px;
   }
@@ -575,13 +643,18 @@ body {
   .title-welcome {
     font-size: 51px;
   }
+
+  .intro-container-text {
+    padding-top: 16.5em;
+  }
+
+  .intro-text-title {
+    font-size: 47px;
+    letter-spacing: 3px;
+  }
 }
 
 @media (max-width: 1024px) {
-  .container {
-    width: 92%;
-  }
-
   .intro-container {
     min-height: 600px;
   }
@@ -591,13 +664,13 @@ body {
   }
 
   .intro-container-text {
-    padding-top: 17em;
+    padding-top: 16.7em;
   }
 
   .intro-text-title {
     font-size: 45px;
     letter-spacing: 2px;
-    padding-right: 0.2em;
+    padding-right: 0em;
   }
 
   .intro-text {
@@ -614,24 +687,28 @@ body {
   }
 
   .intro-arrow {
-    bottom: 43.5%;
+    bottom: 44%;
   }
 
   .right-arrow {
-    left: 94.5%;
+    left: 95%;
   }
 
   .intro-ul {
     top: 93.6%;
     left: 45.9%;
   }
+
+  .owl-item {
+    width: 472px;
+  }
+
+  .owl-control-three {
+    display: block;
+  }
 }
 
 @media (max-width: 991px) {
-  .container {
-    width: 73.5%;
-  }
-
   .logo {
     font-size: 36px;
   }
@@ -641,7 +718,7 @@ body {
   }
 
   .intro-container-text {
-    padding-top: 17em;
+    padding-top: 17.2em;
   }
 
   .intro-text-title {
@@ -654,15 +731,16 @@ body {
   }
 
   .intro-text::after {
+    width: 80px;
     left: 58%;
   }
 
   .intro-arrow {
-    bottom: 44.3%;
+    bottom: 44%;
   }
 
   .right-arrow {
-    left: 92.5%;
+    left: 93%;
   }
 
   .navbar-ul li {
@@ -681,13 +759,19 @@ body {
   .about {
     padding: 4em 0;
   }
+
+  .owl-item {
+    width: 362px;
+  }
+}
+
+@media (max-width: 968px) {
+  .owl-item {
+    width: 242px;
+  }
 }
 
 @media (max-width: 900px) {
-  .container {
-    width: 83.5%;
-  }
-
   .intro-container {
     min-height: 566px;
   }
@@ -701,7 +785,7 @@ body {
   }
 
   .intro-container-text {
-    padding-top: 15em;
+    padding-top: 15.2em;
   }
 
   .intro-text-title {
@@ -715,10 +799,6 @@ body {
 }
 
 @media (max-width: 800px) {
-  .container {
-    width: 90%;
-  }
-
   .intro-container {
     min-height: 530px;
   }
@@ -735,7 +815,6 @@ body {
 
   .intro-text-title {
     font-size: 37px;
-    padding-right: 0em;
   }
 
   .intro-text {
@@ -778,18 +857,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  .more-info-container {
-    width: 600px;
-    margin: 30px auto;
-  }
-}
-
 @media (max-width: 767px) {
-  .container {
-    width: 96%;
-  }
-
   .intro-container {
     min-height: 515px;
   }
@@ -804,11 +872,11 @@ body {
   }
 
   .intro-arrow {
-    bottom: 41.7%;
+    bottom: 41.9%;
   }
 
   .right-arrow {
-    left: 93.2%;
+    left: 93.1%;
   }
 
   .intro-ul {
@@ -822,7 +890,8 @@ body {
     position: absolute;
     margin: 9px 20px 4px 20px;
     border: 1px solid #fff;
-    padding: 3.5px 4.5px;
+    padding: 5.5px 6px;
+    bottom: 4px;
   }
 
   .navbar-ul {
@@ -841,10 +910,6 @@ body {
 }
 
 @media (max-width: 736px) {
-  .container {
-    width: 95.8%;
-  }
-
   .intro-text-title {
     padding-right: 0.75em;
   }
@@ -863,6 +928,14 @@ body {
     width: 12px;
     height: 12px;
   }
+
+  .intro-text-title {
+    padding-right: 0.8em;
+  }
+
+  .right-arrow {
+    left: 93%;
+  }
 }
 
 @media (max-width: 684px) {
@@ -870,12 +943,8 @@ body {
     padding-top: 14.5em;
   }
 
-  .intro-text-title {
-    letter-spacing: 2px;
-  }
-
   .right-arrow {
-    left: 92.3%;
+    left: 92%;
   }
 
   .intro-ul {
@@ -896,6 +965,7 @@ body {
   .intro-text-title {
     font-size: 36px;
     line-height: 1.3;
+    letter-spacing: 2px;
   }
 
   .intro-arrow {
@@ -912,10 +982,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  .container {
-    width: 95%;
-  }
-
   .logo {
     font-size: 28px;
   }
@@ -932,15 +998,15 @@ body {
 
   .intro-text-title {
     font-size: 32px;
-    padding-right: 0.95em;
+    padding-right: 0.85em;
   }
 
   .intro-arrow {
-    bottom: 44%;
+    bottom: 43.8%;
   }
 
   .right-arrow {
-    left: 91%;
+    left: 91.2%;
   }
 
   .intro-ul {
@@ -958,17 +1024,17 @@ body {
 }
 
 @media (max-width: 568px) {
-  .container {
-    width: 94.7%;
-  }
-
   .intro-container {
     min-height: 495px;
   }
 
   .intro-text-title {
     font-size: 31px;
-    padding-right: 0.9em;
+    padding-right: 0.86em;
+  }
+
+  .intro-container-text {
+    padding-top: 12.8em;
   }
 
   .intro-arrow {
@@ -994,10 +1060,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .container {
-    width: 93.5%;
-  }
-
   .intro-container {
     min-height: 470px;
   }
@@ -1008,11 +1070,12 @@ body {
   }
 
   .intro-container-text {
-    padding-top: 12em;
+    padding-top: 11.9em;
   }
 
   .intro-text-title {
     font-size: 29px;
+    padding-right: 0.96em;
   }
 
   .intro-text {
@@ -1095,24 +1158,28 @@ body {
   .more-info-container p {
     font-size: 12px;
   }
+
+  .intro-arrow {
+    bottom: 42.5%;
+  }
+
+  .intro-text-title {
+    padding-right: 1em;
+  }
 }
 
 @media (max-width: 426px) {
-  .container {
-    width: 93%;
-  }
-
   .intro-container {
     min-height: 450px;
   }
 
   .intro-container-text {
     padding-top: 11.6em;
-    padding-right: 0.2em;
   }
 
   .intro-text-title {
     font-size: 26px;
+    padding-right: 1.1em;
   }
 
   .intro-text {
@@ -1132,7 +1199,7 @@ body {
   }
 
   .right-arrow {
-    left: 87%;
+    left: 88%;
   }
 
   .intro-ul {
@@ -1161,10 +1228,6 @@ body {
 }
 
 @media (max-width: 375px) {
-  .container {
-    width: 92%;
-  }
-
   .intro-container {
     min-height: 420px;
   }
@@ -1188,7 +1251,7 @@ body {
     font-size: 23px;
     line-height: 1.5;
     letter-spacing: 2px;
-    padding-right: 0.9em;
+    padding-right: 1.1em;
   }
 
   .intro-text::after {
@@ -1216,10 +1279,6 @@ body {
 }
 
 @media (max-width: 320px) {
-  .container {
-    width: 91%;
-  }
-
   .intro-container {
     min-height: 370px;
   }
@@ -1279,5 +1338,28 @@ body {
   .more-info-container p {
     font-size: 11px;
     line-height: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+  .more-info-container {
+    width: 600px;
+    margin: 30px auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }
