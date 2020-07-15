@@ -3,8 +3,8 @@ const dots = [...document.querySelectorAll('.intro-dot')];
 const burgerButton = document.querySelector('.burger');
 const navbarUL = document.querySelector('.navbar-ul');
 const navLinks = [...document.querySelectorAll('.nav-links')];
-const moreInfoContainer = document.querySelector('.more-info-container');
-const moreInfoInsideContainer = document.querySelector('.more-info-inside-container');
+const moreInfoContainer = document.querySelector('.more-info-overlay');
+const moreInfoInsideContainer = document.querySelector('.more-info-container');
 const btnClose = document.querySelector('.btn-close');
 const btnMoreInfo = document.querySelector('.btn-more');
 

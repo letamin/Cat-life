@@ -344,7 +344,7 @@ body {
   background-color: #000;
 }
 
-.more-info-container {
+.more-info-overlay {
   position: fixed;
   z-index: 500;
   top: 0;
@@ -352,20 +352,16 @@ body {
   bottom: 0;
   left: 0;
   display: none;
-
   background: hsla(180, 1%, 21%, 0.6);
 }
 
-.more-info {
+.more-info-container {
   position: relative;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   outline: 0;
   margin: 10px;
-}
-
-.more-info-inside-container {
   display: block;
   padding: 30px;
   transform: translateY(-200px);
@@ -373,7 +369,7 @@ body {
   animation: display 0.5s ease forwards;
 }
 
-.close-container h4 {
+.more-info-title-container h4 {
   color: #ff3535;
   text-align: center;
   margin-bottom: 20px;
@@ -384,7 +380,7 @@ body {
   font-weight: 500;
 }
 
-.more-info-inside-container h5 {
+.more-info-container h5 {
   padding: 15px 0 7px;
   font-size: 22px;
   letter-spacing: 1px;
@@ -393,7 +389,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.more-info-inside-container p {
+.more-info-container p {
   color: #636363;
   font-size: 14px;
   line-height: 25px;
@@ -412,7 +408,7 @@ body {
   color: #00cdc1;
 }
 
-.close-container {
+.more-info-title-container {
   position: relative;
 }
 
@@ -783,7 +779,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .more-info {
+  .more-info-container {
     width: 600px;
     margin: 30px auto;
   }
@@ -952,11 +948,11 @@ body {
     left: 46%;
   }
 
-  .close-container h4 {
+  .more-info-title-container h4 {
     font-size: 36px;
   }
 
-  .more-info-inside-container h5 {
+  .more-info-container h5 {
     font-size: 20px;
   }
 }
@@ -988,11 +984,11 @@ body {
     left: 91.2%;
   }
 
-  .more-info-inside-container h5 {
+  .more-info-container h5 {
     line-height: 1.4;
   }
 
-  .more-info-inside-container p {
+  .more-info-container p {
     font-size: 13px;
   }
 }
@@ -1087,16 +1083,16 @@ body {
     font-size: 13px;
   }
 
-  .close-container h4 {
+  .more-info-title-container h4 {
     font-size: 32px;
   }
 
-  .more-info-inside-container h5 {
+  .more-info-container h5 {
     font-size: 18px;
     padding: 15px 0 0;
   }
 
-  .more-info-inside-container p {
+  .more-info-container p {
     font-size: 12px;
   }
 }
@@ -1151,15 +1147,15 @@ body {
 }
 
 @media (max-width: 414px) {
-  .more-info-inside-container {
+  .more-info-container {
     padding: 20px;
   }
 
-  .close-container h4 {
+  .more-info-title-container h4 {
     font-size: 32px;
   }
 
-  .more-info-inside-container h5 {
+  .more-info-container h5 {
     font-size: 17px;
   }
 }
@@ -1275,12 +1271,12 @@ body {
     padding: 2em 0;
   }
 
-  .close-container h4 {
+  .more-info-title-container h4 {
     font-size: 28px;
     margin-bottom: 12px;
   }
 
-  .more-info-inside-container p {
+  .more-info-container p {
     font-size: 11px;
     line-height: 22px;
   }
