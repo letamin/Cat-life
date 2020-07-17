@@ -39,11 +39,6 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-function owlSlide(n) {
-    owlIndex = n;
-    showOwlSlides();
-}
-
 function showSlides(n) {
     if (n > introContainer.length) slideIndex = 1;
     if (n < 1) slideIndex = introContainer.length;

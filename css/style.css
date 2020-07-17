@@ -447,8 +447,144 @@ img {
 #owl-container .item img {
   width: 100%;
 }
-/************  Animations  *************/
 
+/************  Middle section  *************/
+.middle-section {
+  background: url(../images/bg.jpg) no-repeat center fixed;
+  background-size: cover;
+  padding: 10em 0;
+}
+
+.middle-section h2 {
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  width: 70%;
+  line-height: 1.2;
+  margin-bottom: 60px;
+}
+
+.button-container {
+  margin-top: 35px;
+}
+
+/************  Service section  *************/
+.service-section {
+  padding: 5em 0;
+  position: relative;
+}
+
+.service-cat-hang-img {
+  position: absolute;
+}
+
+.cat-hang-1,
+.cat-hang-2 {
+  top: 0;
+}
+
+.cat-hang-2 {
+  right: 0;
+}
+
+.cat-hang-2 img {
+  float: right;
+}
+
+.service-section h3 {
+  color: #000;
+  font-size: 56px;
+  margin-bottom: 1em;
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.18);
+  font-family: "Lato", sans-serif;
+  line-height: 1.1;
+}
+
+.service-container {
+  width: 33.33%;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+.service-details {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.service-grid {
+  display: flex;
+}
+
+.service-img img {
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+}
+
+.service-img {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  width: auto;
+  height: auto;
+}
+
+.service-grid:last-child {
+  margin-top: 4em;
+}
+
+.service-text {
+  padding: 30px;
+  position: relative;
+  margin: 2em auto 0;
+  border: 2px solid rgba(179, 177, 177, 0.18);
+  line-height: 2em;
+  color: #999;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+fieldset {
+  padding: 30px;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  color: #212121;
+  font-weight: 600;
+  border-bottom: none;
+  font-family: "Lato", sans-serif;
+}
+
+.spinner {
+  border: 5px solid #ff3535;
+  border-right-color: #dfdfdf;
+  border-bottom-color: #dfdfdf;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  transition: all 0.8s ease-in-out;
+}
+
+.service-details:hover .spinner {
+  transform: rotate(180deg);
+}
+
+/************  Animations  *************/
 @keyframes display {
   from {
     opacity: 0;
@@ -509,6 +645,10 @@ img {
     width: 100px;
     left: 66.5%;
   }
+
+  .middle-section {
+    padding: 9em 0;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -566,6 +706,14 @@ img {
     width: 12px;
     height: 12px;
   }
+
+  .middle-section {
+    padding: 8em 0;
+  }
+
+  .service-cat-hang-img img {
+    width: 80%;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -599,6 +747,15 @@ img {
   .intro-text-title {
     font-size: 47px;
     letter-spacing: 3px;
+  }
+
+  .middle-section h2 {
+    font-size: 50px;
+    width: 80%;
+  }
+
+  .service-section h3 {
+    font-size: 51px;
   }
 }
 
@@ -645,6 +802,14 @@ img {
   .intro-ul {
     top: 93.6%;
     left: 45.9%;
+  }
+
+  .middle-section {
+    padding: 6em 0;
+  }
+
+  .middle-section h2 {
+    font-size: 48px;
   }
 }
 
@@ -699,12 +864,27 @@ img {
   .about {
     padding: 4em 0;
   }
-}
 
-@media (max-width: 980px) {
-}
+  .middle-section h2 {
+    font-size: 41px;
+    width: 100%;
+  }
 
-@media (max-width: 968px) {
+  .service-details,
+  .spinner {
+    width: 200px;
+    height: 200px;
+  }
+
+  .service-text {
+    padding: 20px;
+    font-size: 13px;
+    margin: 1.5em auto 0;
+  }
+
+  legend {
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -795,6 +975,30 @@ img {
 
   .slider {
     padding-bottom: 3em;
+  }
+
+  .middle-section {
+    padding: 4em 0;
+  }
+
+  .middle-section h2 {
+    font-size: 43px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+  }
+
+  .service-details,
+  .spinner {
+    width: 180px;
+    height: 180px;
+  }
+
+  .service-cat-hang-img img {
+    width: 55%;
+  }
+
+  .service-section h3 {
+    font-size: 48px;
   }
 }
 
@@ -920,6 +1124,33 @@ img {
   .about {
     padding: 3em 0;
   }
+
+  .middle-section h2 {
+    font-size: 38px;
+  }
+
+  .service-details,
+  .spinner {
+    width: 150px;
+    height: 150px;
+  }
+
+  legend {
+    font-size: 23px;
+  }
+
+  .service-text {
+    font-size: 12px;
+    padding: 14px;
+  }
+
+  .service-section h3 {
+    font-size: 43px;
+  }
+
+  .service-section {
+    padding: 3em 0;
+  }
 }
 
 @media (max-width: 600px) {
@@ -962,6 +1193,14 @@ img {
   .more-info-container h5 {
     font-size: 20px;
   }
+
+  .middle-section h2 {
+    font-size: 36px;
+  }
+
+  .service-cat-hang-img img {
+    width: 50%;
+  }
 }
 
 @media (max-width: 568px) {
@@ -997,6 +1236,24 @@ img {
 
   .more-info-container p {
     font-size: 13px;
+  }
+
+  .middle-section h2 {
+    font-size: 34px;
+  }
+
+  .service-details,
+  .spinner {
+    width: 120px;
+    height: 120px;
+  }
+
+  .service-text {
+    padding: 9px;
+  }
+
+  legend {
+    font-size: 20px;
   }
 }
 
@@ -1059,6 +1316,50 @@ img {
   .about-text-p {
     font-size: 13px;
   }
+
+  .middle-section h2 {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+
+  .service-grid {
+    flex-direction: column;
+  }
+
+  .service-cat-hang-img img {
+    width: 29%;
+  }
+
+  .service-section h3 {
+    margin-bottom: 0.8em;
+    font-size: 40px;
+  }
+
+  .service-container {
+    width: 100%;
+  }
+
+  .service-container:nth-child(2) {
+    margin: 2em 0;
+  }
+
+  legend {
+    font-size: 22px;
+  }
+
+  .service-text {
+    padding: 20px 30px;
+  }
+
+  .service-details,
+  .spinner {
+    width: 180px;
+    height: 180px;
+  }
+
+  .service-section h3 {
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1106,6 +1407,18 @@ img {
 
   .intro-text-title {
     padding-right: 1em;
+  }
+
+  .middle-section {
+    padding: 3em 0;
+  }
+
+  .middle-section h2 {
+    font-size: 30px;
+  }
+
+  .button-container {
+    margin-top: 30px;
   }
 }
 
@@ -1165,6 +1478,20 @@ img {
 
   .more-info-container h5 {
     font-size: 17px;
+  }
+}
+
+@media (max-width: 384px) {
+  .middle-section h2 {
+    font-size: 28px;
+  }
+
+  .service-cat-hang-img img {
+    width: 34%;
+  }
+
+  .service-section {
+    padding-top: 7em;
   }
 }
 
@@ -1279,6 +1606,24 @@ img {
   .more-info-container p {
     font-size: 11px;
     line-height: 22px;
+  }
+
+  .middle-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .service-section h3 {
+    font-size: 32px;
+  }
+
+  .service-cat-hang-img img {
+    width: 38%;
+  }
+
+  .burger {
+    padding: 4px 4px;
+    top: -2px;
   }
 }
 
