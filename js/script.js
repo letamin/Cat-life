@@ -3,10 +3,12 @@ const dots = [...document.querySelectorAll('.intro-dot')];
 const burgerButton = document.querySelector('.burger');
 const navbarUL = document.querySelector('.navbar-ul');
 const navLinks = [...document.querySelectorAll('.nav-links')];
-const moreInfoContainer = document.querySelector('.more-info-overlay');
-const moreInfoInsideContainer = document.querySelector('.more-info-container');
+const moreInfoOverlay = document.querySelector('.more-info-overlay');
+const moreInfoContainer = document.querySelector('.more-info-container');
 const btnClose = document.querySelector('.btn-close');
 const btnMoreInfo = document.querySelector('.btn-more');
+const blogTitles = [...document.querySelectorAll('.blog-info h4')];
+const blogInfos = [...document.querySelectorAll('.blog-info p')];
 
 var slideIndex = 1;
 
@@ -60,16 +62,30 @@ function burgerActive() {
 
 function displayInfoContainer() {
     btnMoreInfo.addEventListener('click', () => {
-        moreInfoContainer.classList.add('display');
-        moreInfoInsideContainer.classList.remove('close');
+        moreInfoOverlay.classList.add('display');
+        moreInfoContainer.classList.remove('close');
+    })
+
+    blogTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            moreInfoOverlay.classList.add('display');
+            moreInfoContainer.classList.remove('close');
+        })
+    })
+
+    blogInfos.forEach(blog => {
+        blog.addEventListener('click', () => {
+            moreInfoOverlay.classList.add('display');
+            moreInfoContainer.classList.remove('close');
+        })
     })
 }
 
 function closeInfoContainer() {
     btnClose.addEventListener('click', () => {
-        moreInfoInsideContainer.classList.add('close');
+        moreInfoContainer.classList.add('close');
         setTimeout(() => {
-            moreInfoContainer.classList.remove('display');
+            moreInfoOverlay.classList.remove('display');
         }, 500);
     })
 }
