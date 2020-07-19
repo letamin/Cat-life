@@ -11,8 +11,9 @@ const blogTitles = [...document.querySelectorAll('.blog-info h4')];
 const blogInfos = [...document.querySelectorAll('.blog-info p')];
 const btnCloseGallery = document.querySelector('.gallery-close');
 const galleryDetails = document.querySelector('.gallery-details');
+const galleryOverlay = document.querySelector('.gallery-overlay');
 const choosenGalleryImg = document.querySelector('.gallery-overlay-container img');
-const imgSrc = ['m1', 'g2', 'g3', 'm4', 'm5', 'm6', 'm3', 'm2'];
+const galleryImgSrc = ['m1', 'g2', 'g3', 'm4', 'm5', 'm6', 'm3', 'm2'];
 
 var slideIndex = 1;
 var galleryIndex = 0;
@@ -48,7 +49,7 @@ function plusSlides(n, event) {
 }
 
 function currentSlide(n, event) {
-    if (event.classList.contains('img')) {
+    if (event.classList.contains('gallery-img')) {
         showGallery(galleryIndex = n);
     } else if (event.classList.contains('intro-dot')) {
         showSlides(slideIndex = n);
@@ -113,6 +114,9 @@ function resizeScreen() {
 }
 
 function galleryClose() {
+    galleryOverlay.addEventListener('click', () => {
+        galleryDetails.classList.remove('visible');
+    })
     btnCloseGallery.addEventListener('click', () => {
         galleryDetails.classList.remove('visible');
     })
@@ -120,8 +124,8 @@ function galleryClose() {
 
 function showGallery(n) {
     if (n < 0) galleryIndex = 0;
-    if (n >= imgSrc.length) galleryIndex = imgSrc.length - 1;
+    if (n >= galleryImgSrc.length) galleryIndex = galleryImgSrc.length - 1;
     galleryDetails.classList.add('visible');
-    var src = `images/${imgSrc[galleryIndex]}.jpg`;
+    var src = `images/${galleryImgSrc[galleryIndex]}.jpg`;
     choosenGalleryImg.setAttribute('src', src);
 }
