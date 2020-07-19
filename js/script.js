@@ -9,8 +9,13 @@ const btnClose = document.querySelector('.btn-close');
 const btnMoreInfo = document.querySelector('.btn-more');
 const blogTitles = [...document.querySelectorAll('.blog-info h4')];
 const blogInfos = [...document.querySelectorAll('.blog-info p')];
+const btnCloseGallery = document.querySelector('.gallery-close');
+const galleryDetails = document.querySelector('.gallery-details');
+const choosenGalleryImg = document.querySelector('.gallery-overlay-container img');
+const imgSrc = ['m1', 'g2', 'g3', 'm4', 'm5', 'm6', 'm3', 'm2'];
 
 var slideIndex = 1;
+var galleryIndex = 0;
 
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
@@ -25,6 +30,7 @@ function ready() {
     closeInfoContainer();
     resizeScreen();
     autoShowSlides();
+    galleryClose();
 }
 
 function autoShowSlides() {
@@ -33,12 +39,20 @@ function autoShowSlides() {
     }, 5000);
 }
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function plusSlides(n, event) {
+    if (event.classList.contains('gallery-arrow')) {
+        showGallery(galleryIndex += n);
+    } else if (event.classList.contains('intro-arrow')) {
+        showSlides(slideIndex += n);
+    }
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function currentSlide(n, event) {
+    if (event.classList.contains('img')) {
+        showGallery(galleryIndex = n);
+    } else if (event.classList.contains('intro-dot')) {
+        showSlides(slideIndex = n);
+    }
 }
 
 function showSlides(n) {
@@ -96,4 +110,18 @@ function resizeScreen() {
             navbarUL.classList.remove('burger-active');
         }
     })
+}
+
+function galleryClose() {
+    btnCloseGallery.addEventListener('click', () => {
+        galleryDetails.classList.remove('visible');
+    })
+}
+
+function showGallery(n) {
+    if (n < 0) galleryIndex = 0;
+    if (n >= imgSrc.length) galleryIndex = imgSrc.length - 1;
+    galleryDetails.classList.add('visible');
+    var src = `images/${imgSrc[galleryIndex]}.jpg`;
+    choosenGalleryImg.setAttribute('src', src);
 }

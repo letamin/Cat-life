@@ -39,8 +39,8 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1)"></a>
-            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1)"></a>
+            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1, this)"></a>
+            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1, this)"></a>
         </div>
         <div class="intro-container">
             <div class="container">
@@ -60,8 +60,8 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1)"></a>
-            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1)"></a>
+            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1, this)"></a>
+            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1, this)"></a>
         </div>
         <div class="intro-container">
             <div class="container">
@@ -81,8 +81,8 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1)"></a>
-            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1)"></a>
+            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1, this)"></a>
+            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1, this)"></a>
         </div>
         <div class="intro-container">
             <div class="container">
@@ -102,15 +102,15 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1)"></a>
-            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1)"></a>
+            <a href="#" class="intro-arrow left-arrow" onclick="plusSlides(-1, this)"></a>
+            <a href="#" class="intro-arrow right-arrow" onclick="plusSlides(1, this)"></a>
         </div>
 
         <ul class="intro-ul">
-            <li class="intro-dot" onclick="currentSlide(1)"></li>
-            <li class="intro-dot" onclick="currentSlide(2)"></li>
-            <li class="intro-dot" onclick="currentSlide(3)"></li>
-            <li class="intro-dot" onclick="currentSlide(4)"></li>
+            <li class="intro-dot" onclick="currentSlide(1, this)"></li>
+            <li class="intro-dot" onclick="currentSlide(2, this)"></li>
+            <li class="intro-dot" onclick="currentSlide(3, this)"></li>
+            <li class="intro-dot" onclick="currentSlide(4, this)"></li>
         </ul>
     </div>
 
@@ -127,8 +127,8 @@
                 <li class="nav-links"><a href="#about-us">About Us</a></li>
                 <li class="nav-links"><a href="#our-service">Services</a></li>
                 <li class="nav-links"><a href="#blog">Our Blog</a></li>
-                <li class="nav-links"><a href="#">Our Team</a></li>
-                <li class="nav-links"><a href="#">Gallery</a></li>
+                <li class="nav-links"><a href="#team">Our Team</a></li>
+                <li class="nav-links"><a href="#gallery">Gallery</a></li>
                 <li class="nav-links"><a href="#">Contact Us</a></li>
             </ul>
         </div>
@@ -303,10 +303,11 @@
         </div>
     </section>
 
-    <div class="blog-section" id="blog">
+    <!-- Blog section -->
+    <section class="blog-section" id="blog">
         <div class="container">
             <h3>Our Blog</h3>
-            <div class="flex-container">
+            <div class="flex-container blog-flex">
                 <div class="blog-col">
                     <div class="blog-container">
                         <div class="blog-date">
@@ -376,7 +377,110 @@
         <div class="blog-cat-img">
             <img src="./images/cat2.png" alt="">
         </div>
+    </section>
+
+    <!-- Our team section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <h3>Our Team</h3>
+            <div class="flex-container team-section-row">
+                <div class="flex-container team-section-details">
+                    <div class="team-member">
+                        <h4>Nathan Tim</h4>
+                        <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+                            aliquam quaerat voluptatem</p>
+                    </div>
+                    <div class="team-member-img">
+                        <img src="./images/t1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="flex-container team-section-details flex-reverse">
+                    <div class="team-member">
+                        <h4>Keith Ryan</h4>
+                        <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+                            magnam
+                            aliquam quaerat voluptatem</p>
+                    </div>
+                    <div class="team-member-img">
+                        <img src="./images/t2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flex-container team-section-row">
+                <div class="flex-container team-section-details">
+                    <div class="team-member">
+                        <h4>Irene Jan</h4>
+                        <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+                            aliquam quaerat voluptatem</p>
+                    </div>
+                    <div class="team-member-img">
+                        <img src="./images/t3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="flex-container team-section-details flex-reverse">
+                    <div class="team-member">
+                        <h4>Angela Leah</h4>
+                        <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+                            magnam
+                            aliquam quaerat voluptatem</p>
+                    </div>
+                    <div class="team-member-img">
+                        <img src="./images/t4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h3>Gallery</h3>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-row">
+                <div class="gallery-img">
+                    <img src="./images/m1.jpg" alt="" onclick="currentSlide(0, this)" class="img">
+                </div>
+                <div class="gallery-img">
+                    <img src="./images/g2.jpg" alt="" onclick="currentSlide(1, this)" class="img">
+                </div>
+                <div class="gallery-img">
+                    <img src="./images/g3.jpg" alt="" onclick="currentSlide(2, this)" class="img">
+                </div>
+                <div class="gallery-img">
+                    <img src="./images/m4.jpg" alt="" onclick="currentSlide(3, this)" class="img">
+                </div>
+                <div class="gallery-img">
+                    <img src="./images/m5.jpg" alt="" onclick="currentSlide(4, this)" class="img">
+                </div>
+                <div class="gallery-img">
+                    <img src="./images/m6.jpg" alt="" onclick="currentSlide(5, this)" class="img">
+                </div>
+                <div class="gallery-img">
+                    <img src="./images/m3.jpg" alt="" onclick="currentSlide(6, this)" class="img">
+                </div>
+                <div class="gallery-img">
+                    <img src="./images/m2.jpg" alt="" onclick="currentSlide(7, this)" class="img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gallery-details">
+        <div class="gallery-overlay">
+            <button class="gallery-close">X</button>
+        </div>
+        <div class="gallery-overlay-container">
+            <img src="" alt="">
+            <div class="gallery-img-text">Cat Life Image</div>
+        </div>
+        <div class="gallery-arrow">
+            <button class="gallery-arrow-left gallery-arrow" onclick="plusSlides(-1, this)">&#60;</button>
+            <button class="gallery-arrow-right gallery-arrow" onclick="plusSlides(1, this)">&#62;</button>
+        </div>
     </div>
+
 
     <!-- Jquery -->
     <script src="js/jquery-2.2.3.min.js"></script>
