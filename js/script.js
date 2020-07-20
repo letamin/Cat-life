@@ -13,6 +13,7 @@ const btnCloseGallery = document.querySelector('.gallery-close');
 const galleryDetails = document.querySelector('.gallery-details');
 const galleryOverlay = document.querySelector('.gallery-overlay');
 const choosenGalleryImg = document.querySelector('.gallery-overlay-container img');
+const overlay = document.querySelector('.gallery-overlay-container');
 const galleryImgSrc = ['m1', 'g2', 'g3', 'm4', 'm5', 'm6', 'm3', 'm2'];
 
 var slideIndex = 1;
@@ -125,7 +126,7 @@ function galleryClose() {
 function showGallery(n) {
     if (n < 0) galleryIndex = 0;
     if (n >= galleryImgSrc.length) galleryIndex = galleryImgSrc.length - 1;
-    galleryDetails.classList.add('visible');
     var src = `images/${galleryImgSrc[galleryIndex]}.jpg`;
+    galleryDetails.classList.add('visible');
     choosenGalleryImg.setAttribute('src', src);
 }
