@@ -319,7 +319,6 @@ $(document).ready(function () {
         }
 
         scrollArray(overflowing, -deltaX, -deltaY);
-        event.preventDefault();
     }
 
     /**
