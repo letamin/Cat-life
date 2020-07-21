@@ -65,7 +65,7 @@ function showSlides(n) {
         dots[i].classList.remove('here');
     }
 
-    introContainer[slideIndex - 1].style.setProperty('--img', `url(images/${slideIndex}.jpg)`);
+    introContainer[slideIndex - 1].style.setProperty('--img', `url(../images/${slideIndex}.jpg)`);
     introContainer[slideIndex - 1].classList.add('visible');
     dots[slideIndex - 1].classList.add('here');
 }
