@@ -364,6 +364,11 @@ img {
   background-color: #000;
 }
 
+.btn-contact a {
+  color: #fff;
+  text-decoration: none;
+}
+
 /************  More information page  *************/
 .more-info-overlay,
 .gallery-overlay {
