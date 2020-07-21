@@ -106,14 +106,6 @@ function closeInfoContainer() {
     })
 }
 
-function resizeScreen() {
-    window.addEventListener("resize", () => {
-        if (document.body.clientWidth) {
-            navbarUL.classList.remove('burger-active');
-        }
-    })
-}
-
 function galleryClose() {
     galleryOverlay.addEventListener('click', () => {
         galleryDetails.classList.remove('visible');
@@ -122,6 +114,16 @@ function galleryClose() {
         galleryDetails.classList.remove('visible');
     })
 }
+
+
+function resizeScreen() {
+    window.addEventListener("resize", () => {
+        if (document.body.clientWidth) {
+            navbarUL.classList.remove('burger-active');
+        }
+    })
+}
+
 
 function showGallery(n) {
     if (n < 0) galleryIndex = 0;
